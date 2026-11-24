@@ -10,6 +10,15 @@ jobs:
       DATABASE_URL: "postgresql://user:pass@localhost:5432/db"
       AUTH_SECRET: "ci-build-placeholder-not-a-real-secret"
       NEXT_PUBLIC_APP_URL: "http://localhost:3000"
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: pass
+          POSTGRES_DB: db
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -20,7 +29,8 @@ jobs:
       - name: Verify the application
         run: |
           npm ci
+          npx --no-install prisma migrate deploy
           npm run build
           npm start >/tmp/site.log 2>&1 &
-          curl --retry 15 --retry-all-errors --retry-delay 1 -fsSL http://localhost:3000 -o /tmp/home
+          curl --retry 15 --retry-all-errors --retry-delay 1 -fsSL http://localhost:3000 -o /tmp/home || { tail -40 /tmp/site.log; exit 1; }
           grep -Fq "Cairn Workspace" /tmp/home
