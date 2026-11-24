@@ -11,10 +11,10 @@
 import { isKitSite } from "@/config/kit"
 
 export const siteConfig = {
-  name: process.env.NEXT_PUBLIC_BRAND_NAME || (isKitSite ? "OpenStarterKit" : "Acme"),
+  name: process.env.NEXT_PUBLIC_BRAND_NAME || (isKitSite ? "OpenStarterKit" : "Cairn Workspace"),
   tagline:
     process.env.NEXT_PUBLIC_BRAND_TAGLINE ||
-    (isKitSite ? "Ship your SaaS this weekend" : "Ship your product faster"),
+    (isKitSite ? "Ship your SaaS this weekend" : "A home for projects, customers and billing"),
 
   /**
    * Title for `<title>` and search results, where the words people type matter

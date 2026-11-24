@@ -102,8 +102,8 @@
   --radius: 0.875rem;
   /* Brand accent — neutral (true black + grayscale) premium default. Override
      per-deploy with the NEXT_PUBLIC_BRAND_* env vars (see src/config/brand.ts). */
-  --primary-2: #404040;
-  --gradient-brand: linear-gradient(135deg, #0a0a0a 0%, #404040 100%);
+  --primary-2: #407c64;
+  --gradient-brand: linear-gradient(135deg, #214e40 0%, #478467 100%);
 }
 
 .dark {
@@ -115,10 +115,10 @@
   --muted-foreground: #a3a3a3;
   --border: #2e2a25;
   --ring: #d4d4d4;
-  --primary: #fafafa;
-  --primary-foreground: #0a0a0a;
-  --secondary: #2a2622;
-  --secondary-foreground: #fafafa;
+  --primary: oklch(0.432 0.095 166.913);
+  --primary-foreground: oklch(0.979 0.021 166.113);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
   --destructive: #ef4444;
   --success: #22c55e;
   --card: #1c1a17;

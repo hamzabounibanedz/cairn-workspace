@@ -97,12 +97,10 @@ export function brandOverrideCss(): string {
  * pages and the loader included. Drawn at 19.5 they all keep the size they
  * already ask for.
  */
-export const neutralMarkPath =
-  "M21.75 16.333V7.667a2.167 2.167 0 0 0 -1.083 -1.874l-7.583 -4.333a2.167 2.167 0 0 0 -2.167 0l-7.583 4.333A2.167 2.167 0 0 0 2.25 7.667v8.667a2.167 2.167 0 0 0 1.083 1.874l7.583 4.333a2.167 2.167 0 0 0 2.167 0l7.583 -4.333A2.167 2.167 0 0 0 21.75 16.333z" +
-  "M12 6.475l4.767 2.762v5.525L12 17.525l-4.767 -2.762v-5.525z"
+export const neutralMarkPath = "M5 18l7-12 7 12h-4l-3-6-3 6z"
 
 /** Solid brand accent for HTML emails (no CSS vars available there). */
-export const emailAccent = brand.primary ?? (isKitSite ? "#2563eb" : "#0a0a0a")
+export const emailAccent = brand.primary ?? (isKitSite ? "#2563eb" : "#285c4b")
 
 /** Open Graph accent bar + glow, kept visible on the dark OG card. */
 export const ogBrand = {
